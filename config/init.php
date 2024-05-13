@@ -15,10 +15,6 @@ try {
     throw new PDOException("Connection failed: ". $e->getMessage());
     //echo "Connection failed: " . $e->getMessage();
 }
-if($pdo == true){
-    echo "Connected successfully hopefully";
-} else {
-    echo "Connection fucking failed";
-}
+
 ?>
 
