@@ -1,8 +1,8 @@
 <?php
 define('ROOT_URL', 'http://localhost/~maiu/blog_Maiu/');
 $servername = "localhost";
-$username = "maiu"; // Your database username
-$password = "Parool1"; // Your database password
+$username = ""; // Your database username
+$password = ""; // Your database password
 $dbname = "blog";
 $dsn = "mysql:host=$servername;dbname=$dbname";
 try {
