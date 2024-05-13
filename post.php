@@ -19,7 +19,13 @@
     $query->execute(['id' => $id]);
     $post = $query->fetch();
 ?>
+<?php
+$sql = 'SELECT * FROM blog_posts';
+$query = $pdo->prepare($sql);
+$query->execute();
+$posts = $query->fetchAll();
 
+?>
 <?php include('includes/header.php')?>
     <section class="container">
             <div class="blog-post">
@@ -43,4 +49,17 @@
                 <a href="<?php echo ROOT_URL; ?>" class="btn btn-primary">Tagasi</a>
             </div>
     </section> 
+    <aside class="container">
+        <div>
+            <h4>Postitused kuupäevade alusel</h4>
+            <?php foreach($posts as $post) : ?>
+        <div class="blog-post">
+            <small>Postitatud <?php echo $post['created_at'] ?> </small>
+            <a href="<?php echo ROOT_URL?>post.php?id=<?php echo $post['id'];?>" class="btn btn-primary">Loe postitust</a>
+        </div>
+    <?php endforeach; ?>
+            </ul>
+        </div>
+    </aside>
 <?php include('includes/footer.php')?>
+
